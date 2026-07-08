@@ -39,10 +39,12 @@ vertexai.init(project=settings.PROJECT_ID, location=settings.LOCATION)
 
 storage_client = storage.Client(project=settings.PROJECT_ID)
 
+
 qdrant_client = QdrantClient(
     url=settings.QDRANT_URL,
     api_key=settings.QDRANT_API_KEY,
 )
+
 
 # ── FastAPI app (used in Cloud Run / Eventarc webhook mode) ──────────────────
 
@@ -259,6 +261,10 @@ if __name__ == "__main__":
     target_dir     = clean_args[1] if len(clean_args) > 1 else "DATA"
     explicit_type  = clean_args[2] if len(clean_args) > 2 else None
 
+    
+    print("URL:", settings.QDRANT_URL)
+    print("API Key loaded:", settings.QDRANT_API_KEY is not None)
+    print("API Key length:", len(settings.QDRANT_API_KEY or ""))
     if not os.path.exists(target_dir):
         print(f"Error: Path {target_dir} does not exist.")
         sys.exit(1)
