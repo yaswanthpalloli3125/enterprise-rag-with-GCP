@@ -24,7 +24,7 @@ class Settings:
     GROQ_MODEL = "llama-3.3-70b-versatile"
 
     # --- LLM Gateway (Portkey) ---
-    PORTKEY_API_KEY = os.getenv("PORT_API_KEY")
+    PORTKEY_API_KEY = os.getenv("PORTKEY_API_KEY")
     PORTKEY_CONFIG_ID = os.getenv("PORTKEY_CONFIG_ID")
     GROQ_SLUG = "rag"     # primary virtual key: @rag/llama-3.3-70b-versatile
     GROQ_SLUG_2 = "brag"  # fallback virtual key: @brag/llama-3.1-8b-instant
