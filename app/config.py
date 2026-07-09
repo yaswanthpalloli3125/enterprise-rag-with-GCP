@@ -10,8 +10,8 @@ class Settings:
     LOCATION = os.getenv("LOCATION", "us-central1")
     GCP_DOC_AI_LOCATION = os.getenv("GCP_DOC_AI_LOCATION", "us")
     GCP_DOC_AI_PROCESSOR_ID = os.getenv("GCP_DOC_AI_PROCESSOR_ID")
-    RAW_BUCKET = os.getenv("GCP_RAW_BUCKET", "enterpricerag-rag-raw")
-    PROCESSED_BUCKET = os.getenv("GCP_PROCESSED_BUCKET", "enterpricerag-rag-processed")
+    RAW_BUCKET = os.getenv("GCP_RAW_BUCKET", "enterprice-rag-raw")
+    PROCESSED_BUCKET = os.getenv("GCP_PROCESSED_BUCKET", "enterprice-rag-processed")
 
     # --- Vector DB (Qdrant) ---
     QDRANT_URL = os.getenv("QDRANT_CLUSTER_ENDPOINT")
