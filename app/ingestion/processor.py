@@ -56,6 +56,8 @@ def health():
     return {"status": "ok", "service": "RAG Ingestion", "mode": "cloud"}
 
 
+
+
 @app.post("/ingest")
 async def ingest_webhook(request: Request, background_tasks: BackgroundTasks):
     """
