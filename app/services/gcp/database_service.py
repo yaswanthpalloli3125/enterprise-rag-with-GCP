@@ -4,6 +4,8 @@ import logfire
 _pool = None
 
 
+
+
 def get_db_pool():
     """
     Returns a psycopg3 ConnectionPool for LangGraph PostgresSaver.
