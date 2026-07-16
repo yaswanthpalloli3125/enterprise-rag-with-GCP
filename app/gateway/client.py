@@ -9,7 +9,7 @@ from app.config import settings
 #   - Fallback: primary @rag/llama-3.3-70b-versatile → @brag/llama-3.1-8b-instant on failure
 #   - Cache: semantic mode (requires Portkey Enterprise — silently falls back to simple on free/starter)
 #   - Retry: 2 attempts on rate limit / server error before triggering the fallback target
-GATEWAY_CONFIG = {
+"""GATEWAY_CONFIG = {
     "strategy": {"mode": "fallback"},
     "cache": {"mode": "simple"},
     "retry": {
@@ -20,7 +20,9 @@ GATEWAY_CONFIG = {
         {"override_params": {"model": f"@{settings.GROQ_SLUG}/llama-3.3-70b-versatile"}},
         {"override_params": {"model": f"@{settings.GROQ_SLUG_2}/llama-3.1-8b-instant"}},
     ]
-}
+}"""
+
+GATEWAY_CONFIG = settings.PORTKEY_CONFIG_ID
 
 portkey_client = Portkey(
     api_key=settings.PORTKEY_API_KEY,
